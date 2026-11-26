@@ -550,7 +550,7 @@ footer a:hover{color:var(--ink)}
       </div>
 
       <div>
-        <form class="card" id="contact-form" action="https://formsubmit.co/pcprosconsulting@gmail.com" method="POST" novalidate>
+        <form class="card" id="contact-form" action="https://formsubmit.co/a4691f26846f9e5c585396138d71d4eb" method="POST" novalidate>
           <input type="text" name="_honey" id="c-honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="row2">
             <label for="c-name">Name<input id="c-name" autocomplete="name" required></label>
@@ -643,8 +643,10 @@ footer a:hover{color:var(--ink)}
   }));
 
   // Consultation requests are emailed to the inbox through FormSubmit (formsubmit.co).
+  // FORM_ID is FormSubmit's alias for the inbox, so the address isn't used in the endpoint.
   const INBOX = 'pcprosconsulting@gmail.com';
-  const ENDPOINT = 'https://formsubmit.co/ajax/' + INBOX;
+  const FORM_ID = 'a4691f26846f9e5c585396138d71d4eb';
+  const ENDPOINT = 'https://formsubmit.co/ajax/' + FORM_ID;
 
   const form = document.getElementById('contact-form');
   const err = document.getElementById('contact-err');
