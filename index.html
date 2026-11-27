@@ -1,11 +1,11 @@
 <title>PC Pros Consulting</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="PC Pros Consulting is an independent Microsoft endpoint and identity consultancy. We design the move to Entra ID and Intune, lead it, and leave your team able to run it.">
+<meta name="description" content="PC Pros Consulting is an independent Microsoft and Apple IT consultancy. We help new businesses set up IT and growing companies modernize, with fixed fees and no monthly contract.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: sticky header → hero with a sample assessment report → consultant-vs-MSP comparison → problem/what-we-do cards → engagements grid → process rail → fees → principles → work-with-your-MSP band → contact → FAQ */
+/* Layout: sticky header → hero with a starting-point panel → consultant-vs-MSP comparison → problem/what-we-do cards → engagements grid → process rail → fees → principles → work-with-your-MSP band → contact → FAQ */
 :root{
   --bg:#F3F6F8;
   --surface:#FFFFFF;
@@ -95,34 +95,22 @@ p{margin:0}
 .hero-meta span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
 
-/* report panel */
-.report{background:var(--console);color:var(--console-ink);border-radius:14px;border:1px solid var(--console-line);box-shadow:0 30px 60px -30px rgba(8,20,35,.55);overflow:hidden;font-size:.86rem;min-width:0;margin:0}
-.report-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--console-line);background:var(--console-2);font-family:var(--f-mono);font-size:.74rem;color:var(--console-muted)}
-.dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--console-line)}
-.report-bar b{color:var(--console-ink);font-weight:500}
-.report-bar .tag{margin-left:auto;border:1px solid var(--console-line);border-radius:999px;padding:2px 9px}
-.report-body{padding:18px;display:grid;gap:18px}
-.report-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.report-title h4{margin:0;font:600 .98rem var(--f-body)}
-.report-title small{font-family:var(--f-mono);color:var(--console-muted);font-size:.72rem}
-.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border:1px solid var(--console-line);border-radius:8px;overflow:hidden}
-.findings li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 12px;border-bottom:1px solid var(--console-line)}
-.findings li:last-child{border-bottom:0}
-.findings .id{font-family:var(--f-mono);font-size:.7rem;color:var(--console-muted)}
-.findings .t{font-size:.84rem;line-height:1.35}
-.findings .t span{display:block;font-family:var(--f-mono);font-size:.68rem;color:var(--console-muted);margin-top:2px}
-.sev{font-family:var(--f-mono);font-size:.66rem;padding:2px 8px;border-radius:99px;border:1px solid;white-space:nowrap}
-.sev.hi{color:var(--red);border-color:color-mix(in srgb,var(--red) 45%,transparent)}
-.sev.md{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,transparent)}
-.sev.lo{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
-.roadmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.phase{border-top:3px solid var(--console-line);padding-top:8px}
-.phase.p1{border-color:var(--ok)}.phase.p2{border-color:var(--amber)}.phase.p3{border-color:var(--console-muted)}
-.phase b{display:block;font-size:.8rem;font-weight:600}
-.phase span{font-family:var(--f-mono);font-size:.68rem;color:var(--console-muted)}
-.report-note{font-family:var(--f-mono);font-size:.68rem;color:var(--console-muted)}
-@media (max-width:440px){.roadmap{grid-template-columns:minmax(0,1fr)}}
-
+/* starting-point panel */
+.paths{background:var(--console);color:var(--console-ink);border-radius:14px;border:1px solid var(--console-line);box-shadow:0 30px 60px -30px rgba(8,20,35,.55);overflow:hidden;min-width:0}
+.paths-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;padding:14px 18px;border-bottom:1px solid var(--console-line);background:var(--console-2)}
+.paths-head b{font:600 1rem var(--f-body)}
+.paths-head span{font-family:var(--f-mono);font-size:.7rem;color:var(--console-muted)}
+.paths ul{list-style:none;margin:0;padding:6px}
+.paths li+li{border-top:1px solid var(--console-line)}
+.path{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px;border-radius:9px;text-decoration:none;color:inherit;transition:background .15s ease}
+.path:hover{background:var(--console-2)}
+.path:focus-visible{outline:2px solid var(--ok);outline-offset:-2px}
+.path .pi{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font:600 .78rem var(--f-mono);color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+.path b{display:block;font-weight:600;font-size:.95rem;line-height:1.3}
+.path small{display:block;color:var(--console-muted);font-size:.82rem;line-height:1.4;margin-top:2px}
+.path .go{font-family:var(--f-mono);font-size:.7rem;color:var(--ok);white-space:nowrap}
+.path .go::after{content:" \2192"}
+@media (max-width:520px){.path{grid-template-columns:auto minmax(0,1fr)}.path .go{grid-column:2}}
 /* stack strip */
 .strip{border-bottom:1px solid var(--line);background:var(--surface)}
 .strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding-block:22px}
@@ -278,9 +266,9 @@ footer a:hover{color:var(--ink)}
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Independent Microsoft endpoint &amp; identity consulting</p>
-        <h1>The architect for your move to the cloud, <em>not another monthly contract.</em></h1>
-        <p class="lede">We design your move off on-prem Active Directory to Entra ID and Intune, lead the project, and leave your team able to run it. Senior advice, a fixed scope, and no tools or licenses to sell you.</p>
+        <p class="eyebrow">Independent Microsoft &amp; Apple IT consulting</p>
+        <h1>Senior IT guidance for growing businesses, <em>without the monthly contract.</em></h1>
+        <p class="lede">Whether you're launching a new company, moving off an aging server, tightening security or getting your Macs under control, we plan the work, lead it, and leave your team able to run it. Fixed fees, and no tools or licenses to sell you.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact">Book a free consultation</a>
           <a class="btn btn-ghost" href="#problems">See the problems we solve</a>
@@ -292,32 +280,20 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
 
-      <figure class="report" aria-label="Example page from a Cloud Readiness Assessment">
-        <div class="report-bar">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>readiness-assessment · <b>northshore-bio</b></span>
-          <span class="tag">example</span>
+      <nav class="paths" aria-labelledby="paths-title">
+        <div class="paths-head">
+          <b id="paths-title">Where are you starting from?</b>
+          <span>Pick one to see how we help</span>
         </div>
-        <div class="report-body">
-          <div class="report-title">
-            <h4>Key findings &amp; recommendations</h4>
-            <small>184 devices · 212 users</small>
-          </div>
-          <ul class="findings">
-            <li><span class="id">F-01</span><span class="t">Domain controller is the only path for password resets<span>Rec: Entra self-service reset + cloud sync</span></span><span class="sev hi">High</span></li>
-            <li><span class="id">F-02</span><span class="t">SMS still allowed as an MFA method<span>Rec: Authenticator, then passkeys for admins</span></span><span class="sev hi">High</span></li>
-            <li><span class="id">F-03</span><span class="t">146 GPOs, 41 with no linked OU<span>Rec: retire, then rebuild 38 in Settings Catalog</span></span><span class="sev md">Medium</span></li>
-            <li><span class="id">F-04</span><span class="t">Paying for third-party EDR next to Defender licenses<span>Rec: consolidate at renewal</span></span><span class="sev md">Medium</span></li>
-            <li><span class="id">F-05</span><span class="t">Macs enrolled but no compliance policy<span>Rec: baseline in phase 2</span></span><span class="sev lo">Low</span></li>
-          </ul>
-          <div class="roadmap" aria-label="Recommended roadmap">
-            <div class="phase p1"><b>Phase 1 · Identity</b><span>Weeks 1–4</span></div>
-            <div class="phase p2"><b>Phase 2 · Devices</b><span>Weeks 5–10</span></div>
-            <div class="phase p3"><b>Phase 3 · Retire DC</b><span>Weeks 11–12</span></div>
-          </div>
-          <p class="report-note">Illustrative excerpt. Client name and figures are examples.</p>
-        </div>
-      </figure>
+        <ul>
+          <li><a class="path" href="#new-business"><span class="pi" aria-hidden="true">+</span><span><b>Starting a new business</b><small>Plan and set up your IT before you buy anything</small></span><span class="go">New business</span></a></li>
+          <li><a class="path" href="#engagements"><span class="pi" aria-hidden="true">AD</span><span><b>Running on an aging server</b><small>Move sign-in and devices to Entra ID and Intune</small></span><span class="go">Migration</span></a></li>
+          <li><a class="path" href="#engagements"><span class="pi" aria-hidden="true">ID</span><span><b>Weak sign-in security</b><small>Phishing-resistant MFA and Conditional Access</small></span><span class="go">Identity</span></a></li>
+          <li><a class="path" href="#engagements"><span class="pi" aria-hidden="true">$$</span><span><b>Paying for overlapping tools</b><small>Use the security your licenses already include</small></span><span class="go">Security</span></a></li>
+          <li><a class="path" href="#engagements"><span class="pi" aria-hidden="true">⌘</span><span><b>Macs with no management</b><small>Jamf, connected to your Microsoft sign-in</small></span><span class="go">Mac</span></a></li>
+          <li><a class="path" href="#engagements"><span class="pi" aria-hidden="true">?</span><span><b>Not sure where you stand</b><small>An independent review and a roadmap with a fixed quote</small></span><span class="go">Assessment</span></a></li>
+        </ul>
+      </nav>
     </div>
   </section>
 
