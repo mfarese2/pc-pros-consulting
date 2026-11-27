@@ -35,8 +35,25 @@ page = f"""<!doctype html>
 </html>
 """
 
+# The hosted page gets a fuller search title; the preview keeps the short name.
+SITE = "https://pcprosconsulting.com/"
+page = page.replace(
+    "<title>PC Pros Consulting</title>",
+    "<title>PC Pros Consulting | IT Consulting for New and Growing Businesses in Massachusetts</title>",
+    1,
+)
+
 out = ROOT / "docs"
 out.mkdir(exist_ok=True)
 (out / "index.html").write_text(page, encoding="utf-8")
 (out / ".nojekyll").write_text("", encoding="utf-8")
-print("Wrote", out / "index.html")
+(out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
+(out / "sitemap.xml").write_text(
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    f"  <url><loc>{SITE}</loc></url>\n"
+    "</urlset>\n",
+    encoding="utf-8",
+)
+# docs/CNAME holds the custom domain GitHub Pages serves; build.py leaves it alone.
+print("Wrote", out / "index.html", "plus robots.txt and sitemap.xml")
